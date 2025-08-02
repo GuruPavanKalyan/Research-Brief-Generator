@@ -18,9 +18,6 @@ This project is an intelligent LangGraph-based pipeline that automates the gener
 
 ---
 
-## 🧱 Architecture
-
-
 ## 📦 Installation
 - git clone https://github.com/your-username/research-brief-agent.git
 
@@ -38,23 +35,10 @@ This project is an intelligent LangGraph-based pipeline that automates the gener
 - GROQ_API_KEY=...
 - LANGCHAIN_TRACING_V2=true
 - LANGCHAIN_PROJECT=my-research-agent
+- SERPAPI_API_KEY=...
 
 ## 📁 Project Structure
-  ![alt text](image.png)
   ![alt text](image-2.png)
-
-  app/
-│
-├── api/                  # FastAPI endpoints
-├── cli/                  # CLI interface
-├── nodes/                # LangGraph nodes (planner, search, summarizer, etc.)
-├── graph/                # LangGraph construction
-├── prompts/              # Prompt templates
-├── schema/               # Pydantic models for request/response
-├── utils/                # Helper functions (logging, token tracking, etc.)
-├── state/graph_state.py  # Custom LangGraph state definition
-├── config.py             # Configuration loader
-
 
 ## 🧪 Usage
 ### CLI
@@ -75,6 +59,8 @@ This project is an intelligent LangGraph-based pipeline that automates the gener
 - Integrated with LangSmith for tracing
 - Token usage and cost tracking per run
 - Logging for each node's input/output state
+- <img width="1899" height="853" alt="image" src="https://github.com/user-attachments/assets/f0bdea3b-9d16-4038-8c6b-5a2d2dfb6106" />
+
 
 ## 🧩 Dependencies
 
@@ -83,11 +69,16 @@ This project is an intelligent LangGraph-based pipeline that automates the gener
 - FastAPI
 - Pydantic
 - Groq SDK
+- Serpapi
 
 ## 🛠 TODO
 - Add RAG-based document ingestion
-- Enable image + text multimodal inpu
+- Enable image + text multimodal input
 - Frontend (React interface)
+- SerpAPI key dependent response
+
+## DEMO
+- https://www.loom.com/share/43f06adc27c74369baf0b3a4eda3c6e4?t=625&sid=8c96a97b-bc0d-40a3-adf9-fc2cce2636a5
 
 ## 🤝 Contributing
 Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change.
