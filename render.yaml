@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: research-brief-api
+    env: python
+    plan: free
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: LANGCHAIN_API_KEY
+        value: <your_langchain_key>
+      - key: LANGCHAIN_PROJECT
+        value: ContextAwareBriefGen
