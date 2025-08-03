@@ -45,6 +45,7 @@ class InputState(BaseModel):
     summaries: Optional[List[Summary]] = []
     final_brief: Optional[FinalBrief] = None
     context_summary: Optional[str] = ""
+    serpapi_key: str
 
 
 # Helper function for creating points
@@ -57,6 +58,7 @@ def format_bullet_points(bullet_points: List[str]) -> List[str]:
 def generate_brief(state: InputState):
     graph_state = GraphState(**state.dict())
     project_name = "BriefGen-Tracing-Demo"
+    os.environ["SERPAPI_API_KEY"] = state.serpapi_key
     with tracing_v2_enabled(project_name=project_name):
        result = graph.invoke(graph_state)
     
