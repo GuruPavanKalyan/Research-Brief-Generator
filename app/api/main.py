@@ -80,3 +80,41 @@ def generate_brief(state: InputState):
         "final_brief": result["final_brief"].summary
         
     }
+from fastapi.responses import HTMLResponse
+
+@app.get("/", response_class=HTMLResponse)
+def read_root():
+    return """
+    <html>
+        <head>
+            <title>BriefForge API</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    margin-top: 80px;
+                    background-color: #f9f9f9;
+                }
+                h1 {
+                    color: #1e88e5;
+                }
+                p {
+                    font-size: 18px;
+                }
+                .footer {
+                    margin-top: 40px;
+                    color: #888;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>BriefForgeGuru: Multi-AI Research Agent</h1>
+            <p><strong>Generate structured research briefs using LLMs + Web Search</strong></p>
+            <p>API Endpoint: <code>POST /generate-brief</code></p>
+            <div class="footer">
+                <p>Built by <strong>Guru Pavan Kalyan</strong></p>
+                <p>Bring your own SerpAPI key when calling the API</p>
+            </div>
+        </body>
+    </html>
+    """
